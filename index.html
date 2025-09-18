@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDCELLTECH - Menu Gamer</title>
+<style>
+    body {
+        background: radial-gradient(circle at center, #0f0f0f, #1a1a1a);
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header {
+        width: 100%;
+        background: linear-gradient(90deg, #ff0057, #ff6600);
+        padding: 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    header h1 {
+        margin: 5px 0;
+    }
+    #datetime {
+        font-size: 14px;
+    }
+    #letreiro {
+        margin-top: 5px;
+        font-weight: bold;
+        animation: piscar 1s infinite alternate;
+    }
+    @keyframes piscar {
+        from { opacity: 1; }
+        to { opacity: 0.7; }
+    }
+    main {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .button-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        width: 100%;
+        max-width: 1000px;
+    }
+    .game-button {
+        background: #222;
+        border: 2px solid #ff0057;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+    .game-button:hover {
+        background: #ff0057;
+        transform: scale(1.05);
+    }
+    .game-button:active {
+        background: #ff6600;
+        transform: scale(0.98);
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎮 EDCELLTECH 🎮</h1>
+    <div id="datetime"></div>
+    <div id="letreiro">Manutenção de Celulares e PCs - Venha para a EDCELLTECH sua assistência técnica preferida!</div>
+</header>
+
+<main>
+    <div class="button-grid">
+        <div class="game-button"  onclick="abrir('https://www.google.com/search?q=pacman')">🟡 Pac-Man</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=atari+breakout&tbm=isch')">🕹 Atari Breakout</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/celebrating-50-years-of-kids-coding')">🐱 Academia Mágica do Gato Momo</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=loteria+mexicana')">🎲 Loteria Mexicana</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/slalom-canoe-2012')">🚣‍♂️ Canoa Slalom</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=solitaire')">🃏 Paciência</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=snake+game')">🐍 Jogo da Cobrinha</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=jogo+da+velha')">❌⭕ Jogo da Velha</div>
+        <div class="game-button" onclick="abrir('https://www.geo-fs.com/geofs.php')">✈️ Simulador de Voo</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/doctor-who-50th-anniversary')">🕰 Doctor Who</div>
+        <div class="game-button" onclick="abrir('https://rubiks-cube-solver.com/')">🧩 Cubo Mágico</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/halloween-2015')">🍬 Marshmallow Land</div>
+        <div class="game-button" onclick="abrir('https://minesweeperonline.com/')">💣 Campo Minado</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/search?q=fidget+spinner')">🌀 Fidget Spinner</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/doodle-champion-island-games-begin')">🏆 Champion Island</div>
+        <div class="game-button" onclick="abrir('https://www.google.com/doodles/falling-clouds')">☁ Falling Clouds</div>
+        <div class="game-button" onclick="abrir('https://mrdoob.com/projects/chromeexperiments/google-gravity/')">🌌 Google Gravity</div>
+        <div class="game-button" onclick="abrir('https://mrdoob.com/projects/chromeexperiments/zerg-rush/')">⚔️ Zerg Rush</div>
+        <div class="game-button" onclick="abrir('https://www.chess.com/play/computer')">♟ Chess Mate</div>
+
+        <!-- Botões extras -->
+        <div class="game-button" onclick="abrir('https://www.crazygames.com.br/')">🔥 CrazyGames</div>
+        <div class="game-button" onclick="abrir('https://www.minijogos.com.br/')">🎮 MiniJogos</div>
+        <div class="game-button" onclick="abrir('https://poki.com/br')">⚡ Poki Games</div>
+        <div class="game-button" onclick="abrir('https://www.jogos360.com.br/')">🎯 Jogos 360</div>
+    </div>
+</main>
+
+<script>
+    function abrir(url) {
+        window.open(url, '_blank');
+    }
+    function atualizarHora() {
+        const agora = new Date();
+        document.getElementById('datetime').innerText = agora.toLocaleString();
+    }
+    setInterval(atualizarHora, 1000);
+    atualizarHora();
+
+    const mensagens = [
+        "Manutenção de Celulares e PCs - Venha para a EDCELLTECH sua assistência técnica preferida!",
+        "Formatamos e Otimizamos seu PC - Traga para a EDCELLTECH!",
+        "Troca de Tela e Bateria de Celular - Só na EDCELLTECH!",
+        "Assistência Técnica Rápida e Segura - EDCELLTECH!"
+    ];
+    let indice = 0;
+    setInterval(() => {
+        indice = (indice + 1) % mensagens.length;
+        document.getElementById('letreiro').innerText = mensagens[indice];
+    }, 5000);
+</script>
+
+</body>
+</html>
